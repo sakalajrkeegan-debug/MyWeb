@@ -1,0 +1,284 @@
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7fb;
+    color: #1f2937;
+}
+
+
+
+header {
+    background: linear-gradient(135deg, #172554, #2563eb);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    font-size: 18px;
+    margin-top: 12px;
+}
+
+
+
+nav {
+    background-color: #0f172a;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #2563eb;
+}
+
+
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+
+/* Repeated section styling */
+.content-section {
+    background-color: white;
+    padding: 30px;
+    margin: 25px 0;
+    border: 1px solid #dbe3ef;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.content-section h2 {
+    color: #1d4ed8;
+    margin-top: 0;
+    border-bottom: 2px solid #dbeafe;
+    padding-bottom: 10px;
+}
+
+
+/* Unique ID selector */
+#about {
+    border-left: 6px solid #2563eb;
+}
+
+
+/* ==============================
+   LISTS
+   ============================== */
+
+ul,
+ol {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+
+/* ==============================
+   PHOTO GALLERY
+   ============================== */
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+figure {
+    margin: 0;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #dbe3ef;
+}
+
+figure img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+figcaption {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+/* ==============================
+   MEDIA
+   ============================== */
+
+video,
+audio {
+    max-width: 100%;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+/* ==============================
+   TABLE
+   ============================== */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+caption {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+th,
+td {
+    border: 1px solid #cbd5e1;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #1d4ed8;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+
+/* ==============================
+   CONTACT FORM
+   ============================== */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #2563eb;
+    border-color: #2563eb;
+}
+
+button {
+    margin-top: 20px;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover,
+button:focus {
+    background-color: #1e40af;
+}
+
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer {
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+
+/* ==============================
+   RESPONSIVE DESIGN
+   ============================== */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 50px 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        position: static;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
