@@ -1,162 +1,107 @@
-
-
+/* 1. General website styling */
 * {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f7fb;
-    color: #1f2937;
+html {
+    scroll-behavior: smooth;
 }
 
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    color: #f5f5f5;
+    background-color: #0b0b0b;
+}
 
+img, video {
+    max-width: 100%;
+    height: auto;
+}
 
+/* 2. Introduction header */
 header {
-    background: linear-gradient(135deg, #172554, #2563eb);
+    background: linear-gradient(135deg, #000000, #8b0000, #d71920);
     color: white;
     text-align: center;
-    padding: 70px 20px;
+    padding: 60px 20px;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 42px;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
 }
 
-header p {
-    font-size: 18px;
-    margin-top: 12px;
+header a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: #d71920;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
 }
 
-
-
+/* 3. Navigation bar */
 nav {
-    background-color: #0f172a;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 8px;
     padding: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background: #171717;
+    border-bottom: 3px solid #d71920;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    transition: 0.3s;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.2s;
 }
 
-nav a:hover,
-nav a:focus {
-    background-color: #2563eb;
+nav a:hover {
+    background: #d71920;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #ff6666;
+    outline-offset: 3px;
+}
 
-
+/* 4. Main content sections */
 main {
-    width: 90%;
-    max-width: 1100px;
+    width: min(1100px, 92%);
     margin: 30px auto;
 }
 
-
-/* Repeated section styling */
 .content-section {
-    background-color: white;
-    padding: 30px;
-    margin: 25px 0;
-    border: 1px solid #dbe3ef;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.content-section h2 {
-    color: #1d4ed8;
-    margin-top: 0;
-    border-bottom: 2px solid #dbeafe;
-    padding-bottom: 10px;
-}
-
-
-/* Unique ID selector */
-#about {
-    border-left: 6px solid #2563eb;
-}
-
-
-/* ==============================
-   LISTS
-   ============================== */
-
-ul,
-ol {
-    padding-left: 25px;
-}
-
-li {
-    margin-bottom: 8px;
-}
-
-
-/* ==============================
-   PHOTO GALLERY
-   ============================== */
-
-.photo-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-figure {
-    margin: 0;
-    background-color: #f8fafc;
+    background: #1b1b1b;
+    margin-bottom: 25px;
+    padding: 28px;
     border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #dbe3ef;
+    border: 1px solid #393939;
+    border-left: 5px solid #d71920;
+    scroll-margin-top: 20px;
 }
 
-figure img {
-    width: 100%;
-    height: 230px;
-    object-fit: cover;
-    display: block;
+h2 {
+    color: #ff4545;
+    border-bottom: 2px solid #d71920;
+    padding-bottom: 8px;
 }
 
-figcaption {
-    padding: 12px;
-    text-align: center;
-    font-size: 14px;
+h3 {
+    color: #ff7777;
 }
 
-
-/* ==============================
-   MEDIA
-   ============================== */
-
-video,
-audio {
-    max-width: 100%;
-}
-
-video {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-
-/* ==============================
-   TABLE
-   ============================== */
-
+/* 5. Learning table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -165,120 +110,199 @@ table {
 
 caption {
     font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 10px;
+    padding: 10px;
 }
 
-th,
-td {
-    border: 1px solid #cbd5e1;
+th, td {
     padding: 12px;
     text-align: left;
+    border: 1px solid #555555;
 }
 
 th {
-    background-color: #1d4ed8;
+    background: #d71920;
     color: white;
 }
 
-tr:nth-child(even) {
-    background-color: #f1f5f9;
+tbody tr:nth-child(even) {
+    background: #292929;
 }
 
-
-/* ==============================
-   CONTACT FORM
-   ============================== */
-
-form {
-    display: flex;
-    flex-direction: column;
+/* 6. Photo gallery */
+.photo-gallery,
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
 }
 
-label {
+figure {
+    margin: 0;
+    padding: 12px;
+    background: #242424;
+    border-radius: 8px;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    border-radius: 6px;
+}
+
+figcaption {
+    padding-top: 10px;
+    font-size: 0.95rem;
+}
+
+/* 7. Project cards */
+.project-card {
+    padding: 18px;
+    background: #242424;
+    border: 1px solid #444444;
+    border-top: 3px solid #d71920;
+    border-radius: 8px;
+}
+
+/* 8. Audio and video */
+audio, video {
+    display: block;
+    max-width: 100%;
+    margin: 12px 0;
+}
+
+/* 9. Contact form */
+form label {
+    display: block;
     margin-top: 15px;
-    margin-bottom: 5px;
     font-weight: bold;
 }
 
-input,
-textarea {
+input, textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 16px;
+    margin-top: 5px;
+    background: #292929;
+    color: white;
+    border: 1px solid #666666;
+    border-radius: 5px;
+    font: inherit;
 }
 
-input:focus,
-textarea:focus {
-    outline: 2px solid #2563eb;
-    border-color: #2563eb;
+input::placeholder,
+textarea::placeholder {
+    color: #cccccc;
 }
 
 button {
-    margin-top: 20px;
-    padding: 13px;
+    margin-top: 18px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 6px;
-    background-color: #2563eb;
+    border-radius: 5px;
+    background: #d71920;
     color: white;
-    font-size: 16px;
+    font: inherit;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover,
-button:focus {
-    background-color: #1e40af;
+header a:hover {
+    background: #a50000;
 }
 
-
-/* ==============================
-   FOOTER
-   ============================== */
-
+/* 10. Footer */
 footer {
-    background-color: #0f172a;
-    color: white;
     text-align: center;
-    padding: 25px;
-    margin-top: 40px;
+    padding: 25px 15px;
+    background: #000000;
+    border-top: 3px solid #d71920;
+    color: white;
 }
 
+footer a {
+    color: #ff7777;
+}
 
-/* ==============================
-   RESPONSIVE DESIGN
-   ============================== */
-
+/* 11. Responsive layout for phones */
 @media (max-width: 700px) {
-
     header {
-        padding: 50px 15px;
+        padding: 40px 16px;
     }
 
     header h1 {
-        font-size: 30px;
+        font-size: 1.8rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a {
+        text-align: center;
     }
 
     main {
         width: 94%;
+        margin: 18px auto;
     }
 
     .content-section {
-        padding: 20px;
+        padding: 18px;
     }
 
-    .photo-gallery {
+    .photo-gallery,
+    .project-list {
         grid-template-columns: 1fr;
     }
 
-    nav {
-        position: static;
+    table {
+        font-size: 0.85rem;
     }
 
-    table {
-        font-size: 14px;
+    th, td {
+        padding: 8px;
+        overflow-wrap: anywhere;
     }
+}
+
+/* Theme toggle button */
+#themeToggle {
+    padding: 10px 15px;
+    border: 2px solid #ff3333;
+    border-radius: 8px;
+    background-color: #111;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Light mode */
+body.light-mode {
+    background-color: #f5f5f5;
+    color: #222;
+}
+
+/* Light mode navigation */
+body.light-mode nav {
+    background-color: #ffffff;
+}
+
+/* Light mode sections and cards */
+body.light-mode section,
+body.light-mode .card {
+    background-color: #ffffff;
+    color: #222;
+}
+
+/* Light mode headings */
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3 {
+    color: #cc0000;
+}
+
+/* Smooth theme transition */
+body {
+    transition: background-color 0.3s, color 0.3s;
 }
